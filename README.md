@@ -1,28 +1,73 @@
+# 🏀 Kings Project — NBA Readiness from International Data
 
-# Kings Project — NBA Readiness from International Data
+**Author:** Ian Turner  
+**Date:** October 2025  
+**Tools:** R, ggplot2, MASS, caret, pROC, Shiny, Plotly  
 
-Author: Ian Turner  
-Stack: R (tidyverse, ggplot2, MASS, caret, pROC), Shiny
+---
 
-## What this is
-I predict NBA readiness for international players, engineer archetype scores (post scorer, rebounder, floor spacer, two-way guard, etc.), and surface candidates with high NBA-likeness. Includes 3D visuals and a Shiny browser for filters.
+## 🧠 Overview
+This project analyzes international basketball players to predict **NBA readiness** using logistic regression, archetype analysis, and data visualization.  
+It was designed to simulate a front-office scouting workflow for the Sacramento Kings.  
 
-## Repo layout
-- `code/` — analysis (`kings_project.Rmd`) and data prep script (`01_convert_json_to_csv.R`)
-- `data/` — cleaned inputs and final engineered dataset
-- `outputs/` — final report, code appendix, and `plots/`
-- `shiny_app/` — app code or link
-- Raw JSONs: provided via **GitHub Release** (or `data/raw/` if small)
+The pipeline converts raw JSONs into structured datasets, engineers player archetypes (Post Scorer, Rebounder, Floor Spacer, Two-Way Guard, etc.), and computes an **NBA Probability Score** to identify players most similar to current NBA talent.  
 
-## Shiny
-Launch: <paste-your-hosted-shiny-link>  
-Local: `shiny::runApp("shiny_app")`
+Final outputs include:
+- A full reproducible RMarkdown workflow  
+- A polished final report  
+- Interactive Shiny app for player exploration  
+- Cleaned data and model outputs  
 
-## Reproduce
-1. (Optional) Download raw JSONs from the Release into `data/raw/`
-2. Run `code/01_convert_json_to_csv.R`
-3. Open `code/kings_project.Rmd` in RStudio → Knit
-4. Outputs land in `outputs/` and `outputs/plots/`
+---
 
-## License / Data rights
-Code is MIT. Data rights per original provider; raw files included for academic review only.
+## 📂 Folder Breakdown
+
+### **code/**
+Contains all analysis scripts and documentation.
+- `KingsProject.Rmd` — Main RMarkdown analysis notebook (data prep → modeling → visualization).  
+- `KingsProject.pdf` — Knitted document showing all code and outputs.  
+- `01_convert_json_to_csv.R` — Helper script that extracts and converts JSONs into CSVs.
+
+---
+
+### **data/**
+All data files used for analysis, from raw to processed.
+- `nba_box_player_season.json`, `international_box_player_season.json`, `player.json` — Original JSONs provided.  
+- `nba_data.csv`, `international_data.csv`, `player_data.csv` — Cleaned CSVs.  
+- `full_final_data.csv` — Final merged and augmented dataset used for modeling.  
+- `Data_README.md` — Descriptions for all datasets and variable meanings.
+
+---
+
+### **outputs/**
+Final project deliverables and visualizations.
+- `Kings_Project_2025_Report_Final.pdf` — Final written report.  
+- `plots/` — Folder with exported figures (`3&D plot`, `Archetype overlap`, etc.).  
+
+---
+
+### **shiny_app/**
+Interactive web application.
+- `app.R` — Shiny app for exploring player archetypes and NBA probability interactively.  
+- Hosted app (if deployed): [https://ianturner25.shinyapps.io/kings-player-finder/](https://ianturner25.shinyapps.io/kings-player-finder/)
+
+---
+
+### **Kings_Project_2025.Rproj**
+RStudio project file for easy setup and reproducibility.
+
+### **README.md**
+This file — full project summary and structure.
+
+---
+
+## ⚙️ Reproducibility Instructions
+
+1. **Open** `Kings_Project_2025.Rproj` in RStudio.  
+2. **Install required packages:**
+   ```r
+   install.packages(c(
+     "jsonlite", "dplyr", "lubridate", "MASS", "pROC",
+     "caret", "ggplot2", "scatterplot3d", "tidyr",
+     "shiny", "DT", "plotly"
+   ))
