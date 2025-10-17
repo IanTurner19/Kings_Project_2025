@@ -48,5 +48,3 @@ The workflow moves through three stages:
 
 ---
 
-## 🔧 Data Processing Summary
-The raw JSONs were parsed and converted to CSVs using the script:
