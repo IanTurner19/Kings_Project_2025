@@ -50,7 +50,7 @@ Final project deliverables and visualizations.
 Interactive web application.
 - `app.R` — Shiny app for exploring player archetypes and NBA probability interactively.
 -  `README.md` 
-- Shiny Application Link: https://ianturner25.shinyapps.io/kings-player-finder/](https://ianturner25.shinyapps.io/kings-player-finder/)
+- Shiny Application Link: https://ianturner25.shinyapps.io/kings-player-finder/
 
 ---
 
